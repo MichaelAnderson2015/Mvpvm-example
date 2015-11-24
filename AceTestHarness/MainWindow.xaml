@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow  x:Class="AceTestHarness.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:UserControls="clr-namespace:AceTestHarness.Controls"
+        Title="ACE Simulator" Height="1050" Width="1500"
+        ShowIconOnTitleBar="True" 
+        Icon="Resources/ace.ico">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/bluegradient2.png"  Stretch="UniformToFill"/>
+    </Window.Background>
+ 
+    <Grid>
+        <DockPanel LastChildFill="True" HorizontalAlignment="Stretch" Name="dockPanel" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Height="500" MinWidth="1500" Margin="5,5,5,5">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="1490" >
+                    <UserControls:RoundedBox Grid.Row="1" />
+                    <ContentControl prism:RegionManager.RegionName="Response" Grid.Row="1" />
+                </Grid>     
+            </StackPanel>
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Width="750" Height="550" Margin="5,5,5,5">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="750" Height="550">
+                    <UserControls:RoundedBox Grid.Row="1" />
+                    <ContentControl prism:RegionManager.RegionName="WDE" Grid.Row="1"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Right" Width="750" Height="550" Margin="5,5,5,5" >
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="750" Height="550">
+                    <UserControls:RoundedBox Grid.Row="1" />
+                    <ContentControl prism:RegionManager.RegionName="AWD" Grid.Row="1"/>
+                </Grid>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Controls:MetroWindow>

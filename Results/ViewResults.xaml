@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Results.ViewResults"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             prism:ViewModelLocator.AutoWireViewModel="True" MaxWidth="1480" >
+    <UserControl.Resources>
+        <Style x:Key="ReadOnlyTextBox" TargetType="RichTextBox">
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Background" Value="#FF333333"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Consolas" />
+        </Style>
+    </UserControl.Resources>    
+    <Grid Margin="5,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Name="scroller" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2">
+        <StackPanel>
+                <toolkit:RichTextBox Name="console" Text="{Binding ResultsText}" Style="{StaticResource ReadOnlyTextBox}" MinHeight="450">
+                    <toolkit:RichTextBox.TextFormatter>
+                        <toolkit:PlainTextFormatter />
+                    </toolkit:RichTextBox.TextFormatter>
+                </toolkit:RichTextBox>
+        </StackPanel>
+        </ScrollViewer>    
+        <StackPanel Grid.Row="0" Grid.Column="1" >
+            <Button Content="Clear"  Command="{Binding ClearCommand}" HorizontalAlignment="Right" />
+        </StackPanel>
+    </Grid>
+</UserControl>
