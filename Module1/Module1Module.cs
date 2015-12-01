@@ -1,17 +1,16 @@
-﻿using Prism.Modularity;
+﻿using Microsoft.Practices.Unity;
+using Prism.Modularity;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using Microsoft.Practices.Unity;
 using MVPVM;
 
-namespace Results
+namespace Module1
 {
-    public class ResultsModule : ModuleBase<ResultPresenter>, IModule
+    public class Module1Module : ModuleBase<Module1Presenter>, IModule
     {
     }
 }

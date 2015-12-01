@@ -17,7 +17,7 @@ using vm.Aspects.Diagnostics;
 
 namespace Results
 {
-    class ViewResultsViewModel : BindableBase
+    public class ViewResultsViewModel : BindableBase
     {
         private string _title = "RESULTS AREA";
         private string _resultsText;

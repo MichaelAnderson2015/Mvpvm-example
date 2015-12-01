@@ -1,4 +1,4 @@
-﻿using CapitalGroup.MVPVM;
+﻿using MVPVM;
 using Events;
 using Microsoft.Practices.Unity;
 using Prism.Events;
@@ -16,15 +16,28 @@ using vm.Aspects.Diagnostics;
 
 namespace Results
 {
-    public class ResultPresenter : BasePresenter<ViewResults>
+    public class ResultPresenter : BasePresenter<ViewResults, ViewResultsViewModel>
     {
-        
-        public ResultPresenter(IRegionManager regionManager, IUnityContainer container, IEventAggregator eventAggregator) :
-            base(container, regionManager, eventAggregator, "Response")
+        public ResultPresenter() :
+            base("Results")
         {
            
-           base.EventAggregator.GetEvent<UpdateEvent>().Subscribe(ResultsReceived);
+           
         }
+
+        protected override void OnEventAggregatorSet()
+        {
+            base.EventAggregator.GetEvent<UpdateEvent>().Subscribe(ResultsReceived);
+            
+
+        }
+
+        protected override void OnViewModelSet()
+        {
+            base.ViewModel.ResultsText = "Test on startup";
+           
+        }
+
 
         private void ResultsReceived(Object data)
         {
