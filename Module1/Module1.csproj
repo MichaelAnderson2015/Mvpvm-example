@@ -73,6 +73,7 @@
     <Compile Include="Module1Module.cs" />
     <Compile Include="Module1Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModuleEvents\SubmitButtonEvent.cs" />
     <Compile Include="ViewModule1ViewModel.cs" />
     <Compile Include="ViewModule1.xaml.cs">
       <DependentUpon>ViewModule1.xaml</DependentUpon>
@@ -88,6 +89,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{d246ea92-c24f-44a2-b02a-c1ef759aa2f3}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Events\Events.csproj">
       <Project>{b04150e8-5d63-401b-b0e1-dd6d20c89a09}</Project>
       <Name>Events</Name>

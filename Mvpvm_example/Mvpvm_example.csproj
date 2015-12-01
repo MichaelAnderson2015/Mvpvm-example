@@ -152,6 +152,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{d246ea92-c24f-44a2-b02a-c1ef759aa2f3}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{325c32ca-1587-40c4-8e56-ccb253e10795}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Module1\Module1.csproj">
       <Project>{7357abac-b5f2-4bd6-a5bb-fc579d349005}</Project>
       <Name>Module1</Name>

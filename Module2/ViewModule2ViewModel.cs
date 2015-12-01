@@ -1,4 +1,5 @@
 ﻿using Events;
+using Module2.ModuleEvents;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -31,13 +32,10 @@ namespace Module2
 
         private void OnSubmit(object obj)
         {
-            var module2EventData = this;
-            var testData = "Some Garbage";
+            
             var eventData = new EventData("Module2");
 
-            eventAggregator.GetEvent<UpdateEvent>().Publish(module2EventData);
-            eventAggregator.GetEvent<UpdateEvent>().Publish(testData);
-            eventAggregator.GetEvent<UpdateEvent>().Publish(eventData);
+            eventAggregator.GetEvent<Module2ButtonPressed>().Publish(eventData);
 
         }
     }

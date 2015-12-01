@@ -10,6 +10,9 @@ using Module2;
 using Module1;
 using Results;
 using MVPVM;
+using BusinessLayer;
+using DataAccessLayer;
+
 namespace Mvpvm_example
 {
     class BootStrapper: UnityBootstrapper
@@ -34,6 +37,8 @@ namespace Mvpvm_example
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
+            RegisterTypeIfMissing(typeof(IRandomService), typeof(RandomService) , true);
+            RegisterTypeIfMissing(typeof(ISimulatedData), typeof(SimulatedData), true);
             
         }
 

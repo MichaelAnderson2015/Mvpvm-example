@@ -42,7 +42,7 @@ namespace Module1
         {
             var module1EventData = new EventData("Module1",new EventData(CaseID));
 
-            eventAggregator.GetEvent<UpdateEvent>().Publish(module1EventData);
+            eventAggregator.GetEvent<SubmitButtonEvent>().Publish(module1EventData);
         }
     }
 }
